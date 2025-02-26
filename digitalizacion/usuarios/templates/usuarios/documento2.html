@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            gap: 20px; /* Espacio entre campos */
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Documento 2</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form-grid">
+                <!-- Fila 1 -->
+                <div class="form-group">
+                    <label for="servicio">Servicio:</label>
+                    <input type="text" id="servicio" name="servicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_inicio">Fecha Inicio:</label>
+                    <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_termino">Fecha Término:</label>
+                    <input type="date" id="fecha_termino" name="fecha_termino" required>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="form-group">
+                    <label for="cliente">Cliente:</label>
+                    <input type="text" id="cliente" name="cliente" required>
+                </div>
+                <div class="form-group">
+                    <label for="area">Área:</label>
+                    <input type="text" id="area" name="area" required>
+                </div>
+                <div class="form-group">
+                    <label for="alcance">Alcance:</label>
+                    <textarea id="alcance" name="alcance" required></textarea>
+                </div>
+
+                <!-- Fila 3 -->
+                <div class="form-group">
+                    <label for="responsable">Responsable:</label>
+                    <input type="text" id="responsable" name="responsable" required>
+                </div>
+                <div class="form-group">
+                    <label for="orden_mantenimiento">Orden de Mantenimiento:</label>
+                    <input type="text" id="orden_mantenimiento" name="orden_mantenimiento" required>
+                </div>
+                <div class="form-group">
+                    <label for="tag_seguimiento">Tag de Seguimiento:</label>
+                    <input type="text" id="tag_seguimiento" name="tag_seguimiento" required>
+                </div>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <div class="form-group" style="grid-column: span 3; margin-top: 20px;">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+        <a href="{% url 'home' %}" class="back-link">Volver al inicio</a>
+    </div>
+</body>
+</html>

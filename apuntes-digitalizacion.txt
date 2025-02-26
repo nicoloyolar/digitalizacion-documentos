@@ -1,0 +1,20 @@
+superuser:
+
+    - name: admin 
+    - email: admin@admin.cl 
+    - pass: admin123*!
+
+como se trata de una aplicación de digitalización de documentos, se definen los siguientes roles:
+
+    - admin             : puede gestionar usuarios, documentos y reportes 
+    - supervisor        : puede revisar y aprobar checklists 
+    - usuario           : solo puede completar checklists y acceder a sus propios documentos 
+
+se logra ingresar con datos validados de un usuario 
+
+- se defe definir la pantalla principal o 'home'
+
+TO DO LIST 
+
+    - cambiar el color del placeholder en el login 
+    - completar el formulario para permiso KIZEO
